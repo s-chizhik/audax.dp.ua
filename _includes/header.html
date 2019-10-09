@@ -2,7 +2,10 @@
 
     <div class="container">
 
-        <a class="navbar-brand" href="{{"/" | relative_url }}">{{ site.title }}</a>
+        <a class="navbar-brand" href="{{"/" | relative_url }}">
+            <img height="40" src="{{"/img/logo.png" | relative_url }}" alt="">
+            <!-- {{ site.title }} -->
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
             <span class="navbar-toggler-icon"></span>
@@ -12,9 +15,9 @@
 
 
             <nav class="navbar-nav ml-auto">
-<!--                <div class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--                </div>-->
+                <div class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </div>
             </nav>
         </div>
     </div>
