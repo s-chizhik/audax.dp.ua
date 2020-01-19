@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{% if page.brevet.title %}
+    {% assign brevet_title = "BRM "|append:page.brevet.distance|append:" – "|append:page.brevet.title %}
+{% else %}
+    {% assign brevet_title = "BRM "|append:page.brevet.distance %}
+{% endif %}
+
+{{ content }}
+
+<div class="container my-4">
+    <div class="d-flex w-100 justify-content-between">
+        <h1 class="mb-1 h3">{{ brevet_title }}</h1>
+    </div>
+
+	<hr>
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-6">
+            <dl>
+                <dt>
+                    Дата та час старту
+                    <a
+                        href="https://www.google.com/calendar/event?action=TEMPLATE&dates={{ page.brevet.start.date }}/{{ page.brevet.finish.date }}&text={{ brevet_title }}&location=тест локации&details={{ page.brevet.description|p_to_each_line|url_encode }}"
+                        title="Додати подію в Google calendar"
+                        target="_blank"
+                    >
+                        <i class="far fa-calendar-plus"></i>
+                    </a>
+                </dt>
+                <dd>
+                    {{ page.brevet.start.date | ua_date: true }}
+                </dd>
+                <dt>
+                    Дата та час фінішу
+                </dt>
+                <dd>
+                    {{ page.brevet.finish.date | ua_date: true }}
+                </dd>
+
+                <dt>Дистанція</dt>
+                <dd>{{ page.brevet.distance }} км.</dd>
+
+                <dt>Контрольні точки</dt>
+                <dd>
+                    <ul>
+                    {% for point in page.brevet.control_points %}
+                        <li>{{ point.title }}: {{ point.distance }}км. ({{ point.start }} – {{ point.finish }})</li>
+                    {% endfor %}
+                    </ul>
+                </dd>
+
+                <dt>Опис</dt>
+                <dd>{{ page.brevet.description|p_to_each_line }}</dd>
+            </dl>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <iframe width="100%" height="650px" src="{{ page.brevet.track }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    {% if page.results %}
+    <hr>
+    {% endif %}
+</div>
