@@ -5,7 +5,7 @@ layout: main
 
 <style type="text/css">
 	.jumbotron{
-		background: url("{{ 'img/dnepr.jpg.pagespeed.ce.8OtTlBPvEx.jpeg' | relative_url }}") no-repeat center center; 
+		background: url("{{ 'img/dnepr.jpg.pagespeed.ce.8OtTlBPvEx.jpeg' | relative_url }}") no-repeat center center;
 		-webkit-background-size: 100% 100%;
 		-moz-background-size: 100% 100%;
 		-o-background-size: 100% 100%;
@@ -45,16 +45,27 @@ layout: main
 <hr>
 
 <h4 class="pb-3">Бревети на сезон 2020</h4>
-	
-	<div class="row">
 
-    <div class="col-4">
-        {% include_relative brevets/_list.html %}
-    </div>
+	<div hidden>
+		{% for post in site.brevets2020 %}
 
-    <div class="col-8">
-        {% include_relative brevets/_calendar.html %}
-    </div>
-</div>
-	
+		<a href="{{ post.url }}">
+			BRM {{ post.brevet.distance }} – {{post.brevet.start.date | ua_date}}
+		</a> <br>
+
+		{% endfor %}
 	</div>
+
+
+	<div class="row">
+		<div class="col-4">
+			{% include_relative brevets/_list.html %}
+		</div>
+
+		<div class="col-8">
+			{% include_relative brevets/_calendar.html %}
+		</div>
+	</div>
+
+
+</div>

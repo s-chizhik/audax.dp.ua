@@ -30,3 +30,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+collections:
+  brevets2020:
+    output: true
+    permalink: /hola/:name
