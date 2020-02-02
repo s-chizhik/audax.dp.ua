@@ -1,4 +1,30 @@
----
-layout: default
----
-{{ content }}
+<!DOCTYPE html>
+<html class="h-100" lang="uk">
+
+<head>
+    {% include head.html %}
+    <style>
+        .jumbotron {
+            background: url("{{ 'img/dnepr.jpg.pagespeed.ce.8OtTlBPvEx.jpeg' | relative_url }}") no-repeat center center;
+            -webkit-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+{% include header.html %}
+
+<main>
+    {{ content }}
+</main>
+
+{% include footer.html %}
+
+{% include footer_scripts.html %}
+
+</body>
+</html>

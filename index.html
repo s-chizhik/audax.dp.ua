@@ -3,69 +3,53 @@ title: Головна
 layout: main
 ---
 
-<style type="text/css">
-	.jumbotron{
-		background: url("{{ 'img/dnepr.jpg.pagespeed.ce.8OtTlBPvEx.jpeg' | relative_url }}") no-repeat center center;
-		-webkit-background-size: 100% 100%;
-		-moz-background-size: 100% 100%;
-		-o-background-size: 100% 100%;
-		background-size: 100% 100%;
-	}
-</style>
-
 <div class="jumbotron jumbotron-fluid text-white">
-	<div class="container">
-		<h1 class="display-4">{{ site.title }}</h1>
-		<p class="lead">Бревети Audax Club Parisien у Дніпрі</p>
-	</div>
+    <div class="container">
+        <h1 class="display-4">{{ site.title }}</h1>
+        <p class="lead">Бревети Audax Club Parisien у Дніпрі</p>
+    </div>
 </div>
 
 <div class="container">
 
-	<p class="my-5">
-		Рандонерський клуб Audax Dnipro – організатор велозаїздів за правилами французького клубу Audax Club Parisien (Паризький клуб відчайдушних).
-	</p>
+    <p class="my-5">
+        Рандонерський клуб Audax Dnipro – організатор велозаїздів за правилами французького клубу Audax Club Parisien
+        (Паризький клуб відчайдушних).
+    </p>
 
-	<p class="my-5">
-		Метою нашого клубу є проведення серії заходів – бреветів – велозаїздів на фіксовані дистанції з обмеженим максимальним часом проходження. Кожний учасник заїзду (рандонер), що пройде дистанцію за цей час (не перевищуючи заданого максимуму), вважається переможцем. Кожен учасник, який виконав усі вимоги бревету, має можливість за власні гроші отримати медаль від Audax Club Parisien.
-	</p>
+    <p class="my-5">
+        Метою нашого клубу є проведення серії заходів – бреветів – велозаїздів на фіксовані дистанції з обмеженим
+        максимальним часом проходження. Кожний учасник заїзду (рандонер), що пройде дистанцію за цей час (не перевищуючи
+        заданого максимуму), вважається переможцем. Кожен учасник, який виконав усі вимоги бревету, має можливість за
+        власні гроші отримати медаль від Audax Club Parisien.
+    </p>
 
-	<p class="my-5">
-		Таким чином, бревет – це змагання кожного учасника із самим собою за свої можливості. Це пригода, яка дає змогу перевірити свою готовність до певних обставин та умов. Це подорож, яку можна провести сам на сам або в компанії друзів. Якщо ти готовий кинути собі цей виклик – приєднуйся до нас у наступних заїздах.
-	</p>
+    <p class="my-5">
+        Таким чином, бревет – це змагання кожного учасника із самим собою за свої можливості. Це пригода, яка дає змогу
+        перевірити свою готовність до певних обставин та умов. Це подорож, яку можна провести сам на сам або в компанії
+        друзів. Якщо ти готовий кинути собі цей виклик – приєднуйся до нас у наступних заїздах.
+    </p>
 
-	<p class="my-5">
-		Audax Dnipro було створено за підтримки і сприяння клубів <a href="https://moguls-audax.org.ua">Moguls Audax</a>
-		та <a href="https://sites.google.com/site/audaxkharkov/">Audax Kharkov</a>
-		і є членом асоціації рандонерів <a href="https://sites.google.com/site/randonneursgo/association-randonneurs-ukraine">Randonneurs Ukraine</a>
-	</p>
-
-
-
-<hr>
-
-<h4 class="pb-3">Бревети на сезон 2020</h4>
-
-	<div hidden>
-		{% for post in site.brevets2020 %}
-
-		<a href="{{ post.url }}">
-			BRM {{ post.brevet.distance }} – {{post.brevet.start.date | ua_date}}
-		</a> <br>
-
-		{% endfor %}
-	</div>
+    <p class="my-5">
+        Audax Dnipro було створено за підтримки і сприяння клубів <a href="https://moguls-audax.org.ua">Moguls Audax</a>
+        та <a href="https://sites.google.com/site/audaxkharkov/">Audax Kharkov</a>
+        і є членом асоціації рандонерів
+		<a href="https://sites.google.com/site/randonneursgo/association-randonneurs-ukraine">Randonneurs Ukraine</a>
+    </p>
 
 
-	<div class="row">
-		<div class="col-4">
-			{% include_relative brevets/_list.html %}
-		</div>
+    <hr>
 
-		<div class="col-8">
-			{% include_relative brevets/_calendar.html %}
-		</div>
-	</div>
+    <h4 class="pb-3">Бревети на сезон 2020</h4>
 
+    <div class="row">
+        <div class="col-4">
+            {% include_relative brevets/_list.html %}
+        </div>
+
+        <div class="col-8">
+            {% include_relative brevets/_calendar.html %}
+        </div>
+    </div>
 
 </div>
