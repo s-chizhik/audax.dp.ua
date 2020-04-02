@@ -2,14 +2,20 @@
 title: Головна
 layout: main
 ---
-
+<style>
+    @media (min-width:992px) {
+        .main_page__logo {
+            border-right:1px solid #dee2e6;
+        }
+    }
+</style>
 <div class="jumbotron jumbotron-fluid text-white">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-4 border-right">
+            <div class="col-lg-4 col-12 main_page__logo text-center">
                 <object data="/img/audax_dnipro-01.svg" alt="Audax Dnipro logo" type="image/svg+xml" style="height:150px;"></object>
             </div>
-            <div class="col-8">
+            <div class="col-lg-8 col-12 text-center">
                 <p class="lead">
                     Рандонерський клуб Audax Dnipro – організатор велозаїздів за правилами французького клубу
                     Audax Club Parisien (Парижський клуб відчайдушних).
@@ -47,11 +53,11 @@ layout: main
     <h4 class="pb-3">Бревети на сезон 2020</h4>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4">
             {% include_relative brevets/_list.html %}
         </div>
 
-        <div class="col-8">
+        <div class="col-lg-8 d-none d-lg-block">
             {% include_relative brevets/_calendar.html %}
         </div>
     </div>

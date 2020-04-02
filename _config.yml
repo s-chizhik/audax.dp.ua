@@ -33,4 +33,4 @@ plugins:
 collections:
   brevets2020:
     output: true
-    permalink: /hola/:name
+    permalink: /brevets/2020/:name
