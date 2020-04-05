@@ -1,36 +1,54 @@
-        <h5>Квітень</h5>
-        <ul>
-            <li><span class="badge badge-danger">11.04</span>  — Флеш <em class="text-muted">(подробиці згодом)</em></li>
-        </ul>
+<style>
+
+    .row-active {
+        background-color: #e6f2ff !important;
+    }
+    .brevet-info {
+        border-left: 1px #efefef solid;
+    }
+</style>
+
+{% assign grouped_brevets = site.brevets2020 | group_by_exp:"post", "post.brevet.start.date | date: '%m' | to_integer| minus: 1" %}
+
+<div class="list-group">
+
+    {% for brevets_hash in grouped_brevets %}
+
+        {% for brevet in brevets_hash.items %}
+
+            {% if brevet.brevet.active %}
+                {% assign row_class = 'row-active' %}
+            {% elsif brevet.brevet.closed %}
+                {% assign row_class = 'text-muted' %}
+            {% else %}
+                {% assign row_class = '' %}
+            {% endif %}
+
+            <a href="{{brevet.url}}" class="list-group-item list-group-item-action flex-column align-items-start {{row_class}}">
+
+                <div class="row">
+                    <div class="col-4 text-center text-lg-right">
+                        <h5><span class="badge {{ brevet.brevet.active | if: 'badge-primary', 'badge-secondary'}}">{{brevet.brevet.start.date | date: '%d' }}</span></h5>
+                        <strong>{{site.data.ua_months[brevets_hash.name]}}</strong><br>
+                        <i class="fas fa-clock"></i> {{brevet.brevet.start.date| date: '%H:%M'}}
+                    </div>
+                    <div class="col-8 brevet-info">
+                        <span>{{brevet.brevet.distance}} – {{brevet.brevet.title}}</span>
+
+                        <p class="mt-3">
+                            {% unless brevet.brevet.closed %}
+                                <i class="fas fa-map-marked-alt"></i> {{brevet.brevet.control_points[0].title}}
+                            {% else %}
+                                <i class="fas fa-times"></i> Бревет завершено
+                            {% endunless %}
+                        </p>
+
+                    </div>
+                </div>
+
+            </a>
 
 
-        <h5>Травень</h5>
-        <ul>
-            <li><span class="badge badge-info">30.05</span>  — <a href="https://www.openrunner.com/r/10554149">BRM 200 – На старт: Перший офіційний бревет клубу Audax Dnipro</a></li>
-        </ul>
-
-        <h5>Червень</h5>
-        <ul>
-            <li><span class="badge badge-primary">13.06</span> — <a href="https://www.openrunner.com/r/10554434">BRM 300 – Увага: Знову в путь</a></li>
-            <li><span class="badge badge-info">27.06</span> — <a href="https://www.openrunner.com/r/10554582">BRM 200 – Марш: Не минуло й тижня</a></li>
-        </ul>
-
-        <h5>Липень</h5>
-        <ul>
-            <li><span class="badge badge-primary">11.07</span> — <a href="https://www.openrunner.com/r/10556254">BRM 300 – Не розслабляємося: ще одна мандрівка мальовничою Дніпропетровщиною</a></li>
-            <li><span class="badge badge-info">25.07</span> — <a href="https://www.openrunner.com/r/10556277">BRM 200 </a></li>
-        </ul>
-
-        <h5>Серпень</h5>
-        <ul>
-            <li><span class="badge badge-success">08.08</span> — <a href="https://www.openrunner.com/r/10557067">BRM 400 – Не боїмося нових викликів</a></li>
-            <li><span class="badge badge-info">22.08</span> — <a href="https://www.openrunner.com/r/10557231">BRM 200 </a></li>
-        </ul>
-
-
-        <h5>Вересень</h5>
-        <ul>
-            <li>
-                <span class="badge badge-warning">05.09</span> — <a href="https://www.openrunner.com/r/10557314">BRM 600 – Друге дихання</a>
-            </li>
-        </ul>
+        {% endfor %}
+    {% endfor %}
+</div>

@@ -8,3 +8,8 @@ https://audax.dp.ua
 bundle install
 bundle exec jekyll build
 ```
+
+https://learn.cloudcannon.com/jekyll/introduction-to-jekyll-collections/
+https://jekyllrb.com/docs/collections/
+
+#2196f3
