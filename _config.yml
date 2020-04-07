@@ -1,8 +1,8 @@
 title: Audax Dnipro
 email: audax.dnipro@gmail.com
-description:  # this means to ignore newlines until "baseurl:"
+description: "" # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://audax.dp.ua" # the base hostname & protocol for your site, e.g. http://example.com
 
 recaptcha_site_key: 6LftFb0UAAAAAFZTHBeHCHYAccJoPqFr3Qg4rgIT
 
@@ -10,6 +10,7 @@ recaptcha_site_key: 6LftFb0UAAAAAFZTHBeHCHYAccJoPqFr3Qg4rgIT
 plugins:
   - jekyll-feed
   - jekyll-admin
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -30,6 +31,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
 collections:
   brevets2020:
     output: true
