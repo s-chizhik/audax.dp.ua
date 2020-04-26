@@ -12,10 +12,11 @@ jobs:
       run: |
         docker run --rm \
         -v ${{ github.workspace }}:/srv/jekyll \
+        -v ${{ github.workspace }}/vendor/bundle:/usr/local/bundle \
         -e JEKYLL_UID=$(id -u) \
         -e JEKYLL_GID=$(id -g) \
         jekyll/jekyll:4.0 \
-        bash -c "jekyll build --trace; ls -la"
+        bash -c "jekyll build --trace && ls -la"
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v1
       with:
