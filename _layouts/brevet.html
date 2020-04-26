@@ -12,9 +12,15 @@ layout: default
 <div class="container my-4">
     <div class="d-flex w-100 justify-content-between">
         <h1 class="mb-1 h3">{{ brevet_title }}</h1>
+        {% if page.brevet.active and page.brevet.registration_form %}
+        <a class="btn btn-primary" target="_blank" rel="noreferrer,nofollow" href="{{ page.brevet.registration_form }}">
+            <i class="fas fa-clipboard"></i>
+            Зареєструватись
+        </a>
+        {% endif %}
     </div>
 
-	<hr>
+    <hr>
 
     <div class="row">
 
