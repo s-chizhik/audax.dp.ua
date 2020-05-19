@@ -2,8 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>
-    {% if page.title %}
-        {{ page.title | escape }} - {{ site.title | escape }}
+    {% if page.layout == 'brevet' %}
+        BRM {{ page.brevet.distance | escape }} - {{ page.brevet.title | escape }} | {{ site.title | escape }}
+    {% elsif page.title %}
+        {{ page.title | escape }} | {{ site.title | escape }}
     {% else %}
         {{ site.title | escape }}
     {% endif %}

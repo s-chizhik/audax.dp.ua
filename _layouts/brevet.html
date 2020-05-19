@@ -29,7 +29,7 @@ layout: default
                 <dt>
                     Дата та час старту
                     <a
-                        href="https://www.google.com/calendar/event?action=TEMPLATE&dates={{ page.brevet.start.date }}/{{ page.brevet.finish.date }}&text={{ brevet_title }}&location={{ page.brevet.control_points[0].title }}&details={{ page.brevet.description|p_to_each_line|url_encode }}"
+                        href="https://www.google.com/calendar/event?action=TEMPLATE&dates={{ page.brevet.start.date }}/{{ page.brevet.finish.date }}&text={{ brevet_title }}&location={{ page.brevet.control_points[0].title|url_encode }}&details={{ page.brevet.description|p_to_each_line|url_encode }}"
                         title="Додати подію в Google calendar"
                         target="_blank"
                     >
@@ -68,8 +68,31 @@ layout: default
         </div>
 
     </div>
+    {% if page.brevet.results %}
 
-    {% if page.results %}
-    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for result in page.brevet.results %}
+        <tr>
+            <td>{{result.name.first}}</td>
+            <td>{{result.name.last}}</td>
+            <td>{{result.club}}</td>
+            <td>{{result.club}}</td>
+            <td>{{result.result}}</td>
+            <td>{{result.medal}}</td>
+            <td>{{result.gender}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
     {% endif %}
+
 </div>
