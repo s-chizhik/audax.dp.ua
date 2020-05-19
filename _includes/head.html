@@ -1,15 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>
-    {% if page.layout == 'brevet' %}
-        BRM {{ page.brevet.distance | escape }} - {{ page.brevet.title | escape }} | {{ site.title | escape }}
-    {% elsif page.title %}
-        {{ page.title | escape }} | {{ site.title | escape }}
-    {% else %}
-        {{ site.title | escape }}
-    {% endif %}
-</title>
+{% if page.layout == 'brevet' %}
+    {% assign _title = "BRM "|append:page.brevet.distance|append:" – "|append:page.brevet.title|append:' | '|append:site.title %}
+{% elsif page.title %}
+    {% assign _title = page.title|append:' | '|append:site.title %}
+{% else %}
+    {% assign _title = site.title %}
+{% endif %}
+
+<title>{{ _title }}</title>
 
 <style>
     .navbar-light .navbar-nav .nav-link {
@@ -21,3 +21,6 @@
 </style>
 
 <meta name="theme-color" content="#f8f9fa">
+
+<meta property="og:title" content="{{ _title }}" />
+<meta property="og:description" content="Рандонерський клуб Audax Dnipro – організатор велозаїздів за правилами французького клубу Audax Club Parisien" />
