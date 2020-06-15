@@ -73,21 +73,31 @@ layout: default
     <table class="table">
         <thead>
         <tr>
-            <th>Имя</th>
-            <th>Фамилия</th>
+            <th>#</th>
+            <th>Ім'я</th>
+            <th>Клуб</th>
+            <th>Час</th>
+            <th>Гомологація</th>
         </tr>
         </thead>
         <tbody>
 
         {% for result in page.brevet.results %}
         <tr>
-            <td>{{result.name.first}}</td>
-            <td>{{result.name.last}}</td>
+            <td>{{forloop.index}}</td>
+            <td>{{result.name}}</td>
             <td>{{result.club}}</td>
-            <td>{{result.club}}</td>
-            <td>{{result.result}}</td>
-            <td>{{result.medal}}</td>
-            <td>{{result.gender}}</td>
+            <td>
+                {% if result.result == 'DNF' %}
+                    <abbr title="Did Not Finish">DNF</abbr>
+                {% else %}
+                    {{result.result}}
+                {% endif %}
+
+            </td>
+
+
+            <td>{{result.homologation}}</td>
         </tr>
         {% endfor %}
         </tbody>
