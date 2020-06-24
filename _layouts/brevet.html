@@ -78,6 +78,7 @@ layout: default
             <th>Клуб</th>
             <th>Час</th>
             <th>Гомологація</th>
+            <th>Strava</th>
         </tr>
         </thead>
         <tbody>
@@ -93,11 +94,17 @@ layout: default
                 {% else %}
                     {{result.result}}
                 {% endif %}
-
             </td>
 
 
             <td>{{result.homologation}}</td>
+            <td>
+                {% if result.strava %}
+                    <a href="{{result.strava}}" class="btn btn-outline-strava" target="_blank" rel="noreferrer,nofollow">
+                        <em class="fab fa-strava"></em>
+                    </a>
+                {% endif %}
+            </td>
         </tr>
         {% endfor %}
         </tbody>
