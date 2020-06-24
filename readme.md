@@ -1,7 +1,8 @@
 # Audax Dnipro cycling club website
 https://audax.dp.ua
 
-[![Build Status](https://travis-ci.org/s-chizhik/audax.dp.ua.svg?branch=master)](https://travis-ci.org/s-chizhik/audax.dp.ua)
+![Jekyll site CI](https://github.com/s-chizhik/audax.dp.ua/workflows/Jekyll%20site%20CI/badge.svg)
+
 
 # Build
 ```shell script
