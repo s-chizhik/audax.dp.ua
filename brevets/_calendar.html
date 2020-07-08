@@ -62,7 +62,9 @@
                 currentDate.getDate() +
                 '</span>\n';
 
-            element.style.backgroundColor = 'var(--blue)';
+            element.style.backgroundColor = event.closed
+                ? '#6c757d'
+                : (event.active ? 'var(--blue)' : '#b1d5ff');
 
             console.log(currentDate, events, $($(element).find('span')[0]));
         },
@@ -70,6 +72,8 @@
         {% for brevet in site.brevets2020 %}
         {
             name: "<a href='{{brevet.url}}'>{{brevet.brevet.distance}} – {{brevet.brevet.title | escape}}</a>",
+            active: {{brevet.brevet.active|default:'false'}},
+            closed: {{brevet.brevet.closed|default:'false'}},
             location: "<i class='fas fa-map-marked-alt'></i> {{brevet.brevet.control_points[0].title | escape}}",
             startDate: new Date({{brevet.brevet.start.date| date: '%Y'}}, {{brevet.brevet.start.date| date: '%m'| minus:1}}, {{brevet.brevet.start.date| date: '%e'}}),
             endDate: new Date({{brevet.brevet.start.date| date: '%Y'}}, {{brevet.brevet.start.date| date: '%m'| minus:1}}, {{brevet.brevet.start.date| date: '%e'}}),
