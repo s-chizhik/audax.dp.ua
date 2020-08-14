@@ -91,6 +91,8 @@ layout: default
             <td>
                 {% if result.result == 'DNF' %}
                     <abbr title="Did Not Finish">DNF</abbr>
+                {% elsif result.result == 'DNS' %}
+                    <abbr title="Did Not Start">DNS</abbr>
                 {% else %}
                     {{result.result}}
                 {% endif %}
