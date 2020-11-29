@@ -3,9 +3,13 @@ title: Головна
 layout: main
 ---
 <style>
-    @media (min-width:992px) {
+    @media (min-width: 992px) {
         .main_page__logo {
-            border-right:1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .main_page__logo > object {
+            height: 150px;
         }
     }
 </style>
@@ -13,7 +17,7 @@ layout: main
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-12 main_page__logo text-center">
-                <object data="/img/audax_dnipro-01.svg" alt="Audax Dnipro logo" type="image/svg+xml" style="height:150px;"></object>
+                <object class="main_logo" data="/img/audax_dnipro-01.svg" type="image/svg+xml"></object>
             </div>
             <div class="col-lg-8 col-12 text-center">
                 <p class="lead">
@@ -41,24 +45,32 @@ layout: main
     </p>
 
     <p class="my-5">
-        Audax Dnipro було створено за підтримки і сприяння клубів <a href="https://moguls-audax.org.ua">Moguls Audax</a>
-        та <a href="https://sites.google.com/site/audaxkharkov/">Audax Kharkov</a>
+        Audax Dnipro було створено за підтримки і сприяння клубів
+        <a href="https://moguls-audax.org.ua" target="_blank" rel="noreferrer,noopener">
+            Moguls Audax
+        </a>
+        та
+        <a href="https://sites.google.com/site/audaxkharkov/" target="_blank" rel="noreferrer,noopener">
+            Audax Kharkov
+        </a>
         і є членом асоціації рандонерів
-		<a href="https://sites.google.com/site/randonneursgo/association-randonneurs-ukraine">Randonneurs Ukraine</a>
+        <a href="https://sites.google.com/site/randonneursgo/association-randonneurs-ukraine" target="_blank"
+           rel="noreferrer,noopener">
+            Randonneurs Ukraine
+        </a>
     </p>
-
 
     <hr>
 
-    <h4 class="pb-3">Бревети на сезон 2020</h4>
+    <h4 class="pb-3">Бревети на сезон 2021</h4>
 
     <div class="row mb-5">
         <div class="col-lg-4">
-            {% include_relative brevets/_list.html %}
+            {% include_relative brevets/_list.html event_source=site.brevets2021 %}
         </div>
 
         <div class="col-lg-8 d-none d-lg-block">
-            {% include_relative brevets/_calendar.html %}
+            {% include_relative brevets/_calendar.html year=2021 event_source=site.brevets2021 %}
         </div>
     </div>
 

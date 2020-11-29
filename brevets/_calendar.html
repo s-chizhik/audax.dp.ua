@@ -3,29 +3,40 @@
 
 <style>
     #brevet_calendar [data-toggle="popover"]:focus {
-        outline: none;
+        /*outline: none;*/
     }
     #brevet_calendar {
         overflow-x: visible;
     }
-    [data-month-id="0"],
-    [data-month-id="1"],
-    [data-month-id="2"],
-    [data-month-id="9"],
-    [data-month-id="10"],
-    [data-month-id="11"] {
-        position: fixed;
-        width: 0 !important;
-        height: 0 !important;
-        z-index: -1 !important;
-        opacity: 0 !important;
+    /*[data-month-id="0"],*/
+    /*[data-month-id="1"],*/
+    /*[data-month-id="2"],*/
+    /*[data-month-id="9"],*/
+    /*[data-month-id="10"],*/
+    /*[data-month-id="11"] {*/
+    /*    position: fixed;*/
+    /*    width: 0 !important;*/
+    /*    height: 0 !important;*/
+    /*    z-index: -1 !important;*/
+    /*    opacity: 0 !important;*/
+    /*}*/
+    .calendar .months-container .month-container {
+        height: 220px !important;
     }
+
+    .calendar tr .day-header:nth-child(6),
+    .calendar tr .day-header:nth-child(7),
+    .calendar tr .day:nth-child(6),
+    .calendar tr .day:nth-child(7) {
+        /*color: #e8190a;*/
+    }
+
 </style>
+
 <div id="brevet_calendar"></div>
 
 <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css" />
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -43,8 +54,8 @@
     let calendar = new Calendar('#brevet_calendar', {
         style: 'custom',
         displayHeader: false,
-        minDate: new Date(2020, 3, 1),
-        maxDate: new Date(2020, 9, 1),
+        minDate: new Date({{include.year}}, 0, 1),
+        maxDate: new Date({{include.year}}, 11, 31),
         language: 'ua',
         clickDay: function(e) {
             let elements = $(e.element).find('[data-toggle="popover"]');
@@ -66,10 +77,12 @@
                 ? '#6c757d'
                 : (event.active ? 'var(--blue)' : '#b1d5ff');
 
-            console.log(currentDate, events, $($(element).find('span')[0]));
+            element.style.color = 'white';
+
+            // console.log(currentDate, events, $($(element).find('span')[0]));
         },
         dataSource: [
-        {% for brevet in site.brevets2020 %}
+        {% for brevet in include.event_source %}
         {
             name: "<a href='{{brevet.url}}'>{{brevet.brevet.distance}} – {{brevet.brevet.title | escape}}</a>",
             active: {{brevet.brevet.active|default:'false'}},
@@ -86,6 +99,7 @@
 
     });
 
+        calendar.setYear({{include.year}});
     });
 
 </script>

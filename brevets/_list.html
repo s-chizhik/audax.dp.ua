@@ -8,7 +8,7 @@
     }
 </style>
 
-{% assign grouped_brevets = site.brevets2020 | group_by_exp:"post", "post.brevet.start.date | date: '%m' | to_integer| minus: 1" %}
+{% assign grouped_brevets = include.event_source | group_by_exp:"post", "post.brevet.start.date | date: '%m' | to_integer| minus: 1" %}
 
 <div class="list-group">
 

@@ -36,3 +36,6 @@ collections:
   brevets2020:
     output: true
     permalink: /brevets/2020/:name
+  brevets2021:
+    output: true
+    permalink: /brevets/2021/:name

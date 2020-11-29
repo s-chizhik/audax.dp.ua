@@ -4,12 +4,11 @@ layout: post
 ---
 
 <div class="row">
-
     <div class="col-lg-4">
-        {% include_relative _list.html %}
+        {% include_relative _list.html event_source=site.brevets2020 %}
     </div>
 
     <div class="col-lg-8 d-none d-lg-block">
-        {% include_relative _calendar.html %}
+        {% include_relative _calendar.html year=2020 event_source=site.brevets2020 %}
     </div>
 </div>
