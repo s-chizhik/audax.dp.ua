@@ -88,9 +88,9 @@
             active: {{brevet.brevet.active|default:'false'}},
             closed: {{brevet.brevet.closed|default:'false'}},
             location: "<i class='fas fa-map-marked-alt'></i> {{brevet.brevet.control_points[0].title | escape}}",
-            startDate: new Date({{brevet.brevet.start.date| date: '%Y'}}, {{brevet.brevet.start.date| date: '%m'| minus:1}}, {{brevet.brevet.start.date| date: '%e'}}),
-            endDate: new Date({{brevet.brevet.start.date| date: '%Y'}}, {{brevet.brevet.start.date| date: '%m'| minus:1}}, {{brevet.brevet.start.date| date: '%e'}}),
-            //endDate: new Date({{brevet.brevet.finish.date| date: '%Y'}}, {{brevet.brevet.finish.date| date: '%m'| minus:1}}, {{brevet.brevet.finish.date| date: '%e'}}),
+            startDate: new Date({{brevet.brevet.start| date: '%Y'}}, {{brevet.brevet.start| date: '%m'| minus:1}}, {{brevet.brevet.start| date: '%e'}}),
+            endDate: new Date({{brevet.brevet.start| date: '%Y'}}, {{brevet.brevet.start| date: '%m'| minus:1}}, {{brevet.brevet.start| date: '%e'}}),
+            //endDate: new Date({{brevet.brevet.finish| date: '%Y'}}, {{brevet.brevet.finish| date: '%m'| minus:1}}, {{brevet.brevet.finish| date: '%e'}}),
         },
 
         {% endfor %}

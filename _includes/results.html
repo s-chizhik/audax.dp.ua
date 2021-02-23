@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Ім'я</th>
+        <th>Клуб</th>
+        <th>Час</th>
+        <th>Гомологація</th>
+        <th>Strava</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for result in page.brevet.results %}
+    <tr>
+        <td>{{forloop.index}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.club}}</td>
+        <td>
+            {% if result.result == 'DNF' %}
+            <abbr title="Did Not Finish">DNF</abbr>
+            {% elsif result.result == 'DNS' %}
+            <abbr title="Did Not Start">DNS</abbr>
+            {% else %}
+            {{result.result}}
+            {% endif %}
+        </td>
+
+        <td>{{result.homologation}}</td>
+        <td>
+            {% if result.strava %}
+            <a href="{{result.strava}}" class="btn btn-outline-strava" target="_blank" rel="noreferrer,nofollow">
+                <em class="fab fa-strava"></em>
+            </a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

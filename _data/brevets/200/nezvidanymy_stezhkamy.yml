@@ -1,0 +1,13 @@
+title: Незвіданими стежками
+start: 20200725T060000Z
+finish: 20200725T1930000Z
+
+map: https://www.openrunner.com/r/10556277
+track: https://www.openrunner.com/route/10556277/embed/en/7a47465349686a544477787757737267505743774b536742724b4e4b387952723434392f5355777a4373673d3a3aa9e6a9bac336ece8c6cd8f8e62b0d768
+
+control_points:
+  - {title: 'Старт Булочная "Перша пекарня"', distance: 0, start: '06:00', finish: '07:00'}
+  - {title: 'КП №1 Поворот направо на Т-04-15', distance: 86, start: '8:32', finish: '11:44'}
+  - {title: 'КП №2  Съезд на H-08', distance: 136, start: '10:00', finish: '15:04'}
+  - {title: 'КП №3 Камянское жд вокзал', distance: 173, start: '11:05', finish: '17:32'}
+  - {title: 'Финиш Булочная "Перша пекарня"', distance: 209, start: '12:10', finish: '19:30'}

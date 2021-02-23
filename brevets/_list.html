@@ -8,7 +8,7 @@
     }
 </style>
 
-{% assign grouped_brevets = include.event_source | group_by_exp:"post", "post.brevet.start.date | date: '%m' | to_integer| minus: 1" %}
+{% assign grouped_brevets = include.event_source | group_by_exp:"post", "post.brevet.start | date: '%m' | to_integer| minus: 1" %}
 
 <div class="list-group">
 
@@ -28,9 +28,9 @@
 
                 <div class="row">
                     <div class="col-4 text-center text-lg-right">
-                        <h5><span class="badge {{ brevet.brevet.active | if: 'badge-primary', 'badge-secondary'}}">{{brevet.brevet.start.date | date: '%d' }}</span></h5>
+                        <h5><span class="badge {{ brevet.brevet.active | if: 'badge-primary', 'badge-secondary'}}">{{brevet.brevet.start | date: '%d' }}</span></h5>
                         <strong>{{site.data.ua_months[brevets_hash.name]}}</strong><br>
-                        <i class="fas fa-clock"></i> {{brevet.brevet.start.date| date: '%H:%M'}}
+                        <i class="fas fa-clock"></i> {{brevet.brevet.start| date: '%H:%M'}}
                     </div>
                     <div class="col-8 brevet-info">
                         <span>{{brevet.brevet.distance}} – {{brevet.brevet.title}}</span>
