@@ -1,15 +1,15 @@
-<div class="row">
-    <div class="col">
+<div class="row mt-4">
+    <div class="col-md-6 col-sm-12">
         <dt>Контрольні точки</dt>
         <dd>
             <ul>
                 {% for point in route_object.control_points %}
-                <li>{{ point.title }}: {{ point.distance }}км. (+{{ point.start }} – +{{ point.finish }})</li>
+                <li>{{ point.title }}: {{ point.distance }}км. (+{{ point.distance|kp_open }} – +{{ point.distance|kp_close }})</li>
                 {% endfor %}
             </ul>
         </dd>
     </div>
-    <div class="col">
+    <div class="col-md-6 col-sm-12">
         <iframe width="100%" height="650px" src="{{ route_object.track }}" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
