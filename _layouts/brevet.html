@@ -24,9 +24,23 @@ layout: default
 
     <hr>
 
-    <div class="alert alert-primary" role="alert">
-        В сезоні 2021 ви маєте можливість вибрати дату старту в межах плюс-мінус 7 днів від офіційної дати проведення бревета після погодженням з організатором.
-    </div>
+    {% if page.collection == 'brevets2021' %}
+        <div class="alert alert-primary" role="alert">
+            В сезоні 2021 ви маєте можливість вибрати дату старту в межах плюс-мінус 7 днів від офіційної дати проведення бревета після погодженням з організатором.
+        </div>
+    {% endif %}
+
+    {% if page.brevet.closed %}
+        <div class="alert alert-secondary" role="alert">
+            Бревет завершений. Ви можете переглянути результати нижче.
+        </div>
+    {% endif %}
+
+    {% if page.brevet.closed != true and page.brevet.active != true %}
+        <div class="alert alert-info" role="alert">
+            Цей бревет ще не відкрито для реєстрації. Слідкуйте за новинами.
+        </div>
+    {% endif %}
 
     <div class="row">
 
