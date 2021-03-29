@@ -1,0 +1,11 @@
+title: Кропивницький
+map: https://www.alltrails.com/explore/map/brm-300-8b40665
+track: https://www.alltrails.com/widget/map/brm-300-8b40665?u=m
+
+control_points:
+  - { title: 'Старт', distance: 0 }
+  - { title: "КП №1 Новгородка", distance: 87 }
+  - { title: 'КП №2 Кропивницький', distance: 124 }
+  - { title: "КП №3 Устинівка", distance: 204 }
+  - { title: "КП №4 Казанка (WOG)", distance: 248 }
+  - { title: 'Фініш', distance: 301 }

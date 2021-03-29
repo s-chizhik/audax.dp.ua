@@ -1,0 +1,10 @@
+title: О, городами до Запоріжжя
+map: https://www.openrunner.com/r/10554434
+track: https://www.openrunner.com/route/10554434/embed/en/2b316d4d65672f75304d30454d652f714c6c39654f6e656c2f6d64396941725a4f677355486166563237513d3a3a2362e2bb3f74868f7617218d67ad04fb
+
+control_points:
+  - { title: 'Старт ТРЦ "Караван"', distance: 0 }
+  - { title: 'КП №1 Павлоград выезд из города развилка с дорогой Т-04-16', distance: 70 }
+  - { title: 'КП №2 Васильковка перекресток вправо', distance: 110 }
+  - { title: 'КП №3 Съезд на на северное шоссе', distance: 208 }
+  - { title: 'Финиш ТРЦ "Караван"', distance: 307 }

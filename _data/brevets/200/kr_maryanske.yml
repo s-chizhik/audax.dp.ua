@@ -12,8 +12,8 @@ map: https://www.alltrails.com/explore/map/brm-200-2-8df6a65?u=m
 track: https://www.alltrails.com/widget/map/brm-200-2-8df6a65?u=m
 
 control_points:
-  - { title: 'Старт магазин Сільпо', distance: 0}
-  - { title: "КП №1 Мар'янське", distance: 63}
-  - { title: 'КП №2 Таврійське', distance: 110}
-  - { title: "КП №3 Софіївка (WOG)", distance: 168}
-  - { title: 'Фініш парк Гутовського', distance: 204}
+  - { title: 'Старт магазин Сільпо', distance: 0 }
+  - { title: "КП №1 Мар'янське", distance: 63 }
+  - { title: 'КП №2 Таврійське', distance: 110 }
+  - { title: "КП №3 Софіївка (WOG)", distance: 168 }
+  - { title: 'Фініш парк Гутовського', distance: 204 }
