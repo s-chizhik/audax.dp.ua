@@ -12,15 +12,23 @@
     <tbody>
 
     {% for result in page.brevet.results %}
+
+    {% assign club = site.data.clubs[result.club] %}
+
     <tr>
         <td>{{forloop.index}}</td>
         <td>{{result.name}}</td>
         <td>{{result.club}}</td>
+        <!--<td>{{club}}<br>{{result.club}}</td>-->
         <td>
             {% if result.result == 'DNF' %}
             <abbr title="Did Not Finish">DNF</abbr>
             {% elsif result.result == 'DNS' %}
             <abbr title="Did Not Start">DNS</abbr>
+            {% elsif result.result == 'DSQ' %}
+            <abbr title="Disqualified">DSQ</abbr>
+            {% elsif result.result == 'OTL' %}
+            <abbr title="Over time limit">OTL</abbr>
             {% else %}
             {{result.result}}
             {% endif %}
@@ -29,7 +37,7 @@
         <td>{{result.homologation}}</td>
         <td>
             {% if result.strava %}
-            <a href="{{result.strava}}" class="btn btn-outline-strava" target="_blank" rel="noreferrer,nofollow">
+            <a href="{{result.strava}}" class="btn btn-sm btn-outline-strava" target="_blank" rel="noreferrer,nofollow">
                 <em class="fab fa-strava"></em>
             </a>
             {% endif %}
