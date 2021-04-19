@@ -1,0 +1,19 @@
+start:
+  place:
+    link:
+    title:
+finish:
+  place:
+    link:
+    title:
+
+title: П'ятихатки
+map: https://www.alltrails.com/explore/map/brm-200-4a300d3
+track: https://www.alltrails.com/widget/map/brm-200-4a300d3?u=m
+
+control_points:
+  - { title: 'Старт Ювілейний ринок', distance: 0 }
+  - { title: "КП №1 П'ятихатки", distance: 60 }
+  - { title: 'КП №2 Поворот на M-04', distance: 117 }
+  - { title: 'КП №3 Софіївка', distance: 170 }
+  - { title: 'Фініш АЗС ANP', distance: 202 }
