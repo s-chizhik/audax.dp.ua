@@ -18,7 +18,7 @@
     <tr>
         <td>{{forloop.index}}</td>
         <td>{{result.name}}</td>
-        <td>{{result.club}}</td>
+        <td>{{site.data.clubs[result.club]}}<br /><small>{{result.club}}</small></td>
         <!--<td>{{club}}<br>{{result.club}}</td>-->
         <td>
             {% if result.result == 'DNF' %}
