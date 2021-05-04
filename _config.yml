@@ -19,16 +19,24 @@ exclude:
 defaults:
   -
     scope:
-      path: ""
-      type: "brevets2021"
+      type: brevets2020
     values:
       layout: brevet
   -
     scope:
-      path: ""
-      type: "brevets2020"
+      type: brevets2021
     values:
       layout: brevet
+  -
+    scope:
+      type: brevets2020_protocol
+    values:
+      layout: protocol
+  -
+    scope:
+      type: brevets2021_protocol
+    values:
+      layout: protocol
 
 
 collections:
@@ -38,3 +46,10 @@ collections:
   brevets2021:
     output: true
     permalink: /brevets/2021/:name
+
+  brevets2020_protocol:
+    output: true
+    permalink: /brevets/2020/:name/protocol
+  brevets2021_protocol:
+    output: true
+    permalink: /brevets/2021/:name/protocol

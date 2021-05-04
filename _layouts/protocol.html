@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table {
+			font-family: Arial;
+			font-size: 10pt;
+			border-spacing: 0;
+			border: 1px black solid;
+		}
+		thead {
+			text-align: center;
+		}
+		thead tr:last-child td {
+			border-bottom: 1px gray solid;
+		}
+		td {
+			padding: 5pt;
+		}
+		tbody tr:not(:last-child) td {
+			border-bottom: 1px gray solid;
+		}
+		tbody tr td:last-child {
+			text-align: center;
+		}
+		.br {
+			border-right: 1px gray solid;
+		}
+		.bb {
+			border-bottom: 1px gray solid;
+		}
+		.bt {
+			border-top: 1px gray solid;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td rowspan="3" style="vertical-align: center;" class="br bb">Homologation #</td>
+				<td colspan="3" class="br">ORGANIZER CLUB</td>
+				<td class="br">ACP code</td>
+				<td class="br">DATE</td>
+				<td class="br">DISTANCE</td>
+				<td colspan="2">INFORMATIONS</td>
+			</tr>
+			<tr>
+				<td colspan="3" class="br bb">AUDAX DNIPRO</td>
+				<td class="br bb">550029</td>
+				<td class="br bb">{{ page.brevet.start | fr_protocol_date }} </td>
+				<td class="br bb">{{ page.brevet.distance }} km</td>
+
+				<td class="br bb bt">Medal</td>
+				<td class="bb bt">Gender</td>
+			</tr>
+			<tr>
+				<td class="br">LAST NAME</td>
+				<td class="br">FIRST NAME</td>
+				<td class="br" colspan="2">RIDER'S CLUB</td>
+				<td class="br">ACP CODE</td>
+				<td class="br">TIME</td>
+				<td class="br">(x)</td>
+				<td>(F)</td>
+			</tr>
+		</thead>
+		<tbody style="border-bottom: 2px black solid;">
+			{% for result in page.brevet.results %}
+
+				{% if result.result == 'DNF' %}
+					{% continue %}
+				{%endif%}
+				{% if result.result == 'DNS' %}
+					{% continue %}
+				{%endif%}
+				{% if result.result == 'OTL' %}
+					{% continue %}
+				{%endif%}
+				{% if result.result == 'DSQ' %}
+					{% continue %}
+				{%endif%}
+
+				<tr>
+					<td>{{ result.homologation }}</td>
+					<td>{{ result.name | split: " " | first }}</td>
+					<td>{{ result.name | split: " " | slice: 1,2 | first }}</td>
+
+					<td colspan="2">{{ site.data.clubs[result.club] | split: "," | first }}</td>
+					<td>{{ result.club }}</td>
+					<td>{{ result.result }}</td>
+					<td>{% if result.medal %}x{% endif %}</td>
+					<td>{% if result.female %}F{% endif %}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
