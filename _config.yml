@@ -1,8 +1,8 @@
 title: Audax Dnipro
 email: audax.dnipro@gmail.com
 description: "" # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://audax.dp.ua" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://audax.dp.ua"
 
 recaptcha_site_key: 6LftFb0UAAAAAFZTHBeHCHYAccJoPqFr3Qg4rgIT
 
@@ -12,25 +12,24 @@ plugins:
   - jekyll-admin
   - jekyll-sitemap
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - .github
+  - bin/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "brevets2021"
+    values:
+      layout: brevet
+  -
+    scope:
+      path: ""
+      type: "brevets2020"
+    values:
+      layout: brevet
+
 
 collections:
   brevets2020:
