@@ -6,9 +6,9 @@ map: https://www.openrunner.com/r/10557231
 track: https://www.openrunner.com/route/10557231/embed/en/72546c4932475571523978767956646f507041326e496f553443635a564a6364574c64633332364e4758593d3a3acd363df8eeae768755f5a059cc759a2f
 
 control_points:
-  - { title: 'Старт Парк Богдана Хмельницкого', distance: 0 }
-  - { title: 'КП №1 Петриковка', distance: 54 }
+  - { title: 'Старт Булочна "Перша пекарня"', distance: 0 }
+  - { title: 'КП №1 Петриківка', distance: 54 }
   - { title: 'КП №2 Царичанка', distance: 85 }
-  - { title: 'КП №2 Прядовка', distance: 103 }
+  - { title: 'КП №2 Прядівка', distance: 103 }
   - { title: 'КП №4 Губиниха', distance: 150 }
-  - { title: 'Финиш Парк Богдана Хмельницкого', distance: 204 }
+  - { title: 'Финиш Булочна "Перша пекарня"', distance: 204 }
