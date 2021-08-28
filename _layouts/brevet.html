@@ -24,7 +24,7 @@ layout: default
 
     <hr>
 
-    {% if page.collection == 'brevets2021' %}
+    {% if page.collection == 'brevets2021' and page.brevet.title != 'Century Anniversary' %}
         <div class="alert alert-primary" role="alert">
             В сезоні 2021 ви маєте можливість вибрати дату старту в межах плюс-мінус 7 днів від офіційної дати проведення бревета після погодженням з організатором.
         </div>
