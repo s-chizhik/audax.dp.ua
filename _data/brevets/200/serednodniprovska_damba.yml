@@ -8,12 +8,12 @@ finish:
     title:
 
 title: "Середньодніпровська дамба"
-map: https://www.openrunner.com/r/10554582
-track: https://www.openrunner.com/route/10554582/embed/en/44633074356e5434497271685052566657675a70345555675874674f4b556941547237736a6278774d386f3d3a3a5dc308ff438f7d6deff0d6ec9531b69f
+map: https://www.alltrails.com/explore/map/map-aug-28-12-01-am-3e3aa68
+track: https://www.alltrails.com/widget/map/map-aug-28-12-01-am-3e3aa68?u=m
 
 control_points:
-  - { title: 'Старт ТРЦ "Караван"', distance: 0 }
-  - { title: 'КП №1 Кринички', distance: 56 }
-  - { title: 'КП №2 Поворот направо на в сторону Китайгорода', distance: 130 }
-  - { title: 'КП № 3 Поворот на ул Ясная, Петриковка', distance: 170 }
-  - { title: 'Финиш ТРЦ "Караван"', distance: 212 }
+  - { title: 'Старт Вокзальна площа', distance: 0 }
+  - { title: 'КП №1 Кринички', distance: 48 }
+  - { title: 'КП №2 Поворот праворуч в сторону Китайгорода', distance: 122 }
+  - { title: 'КП №3 Поворот на H-31', distance: 162 }
+  - { title: 'Фініш Вокзальна площа', distance: 215 }

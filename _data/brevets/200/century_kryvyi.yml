@@ -1,0 +1,19 @@
+start:
+  place:
+    link:
+    title:
+finish:
+  place:
+    link:
+    title:
+
+title: Century Anniversary (Kryvyi Rih)
+map: https://www.alltrails.com/explore/map/century-anniversary-kryvyi-rih-b5b8c48
+track: https://www.alltrails.com/widget/map/century-anniversary-kryvyi-rih-b5b8c48?u=m
+
+control_points:
+  - { title: 'Старт АТБ', distance: 0 }
+  - { title: "КП №1 Петрове", distance: 61 }
+  - { title: 'КП №2 Куцівка', distance: 106 }
+  - { title: "КП №3 Чкалівка", distance: 156 }
+  - { title: 'Фініш АТБ', distance: 200 }
